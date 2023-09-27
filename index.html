@@ -70,12 +70,12 @@ button{
             row.parentNode.removeChild(row);
         }
         function removerow()
-        {
-            var table=document.getElementById("dynamic-table").getElementsByTagName('tbody')[0];
-            if (table.rows.length>1){
-                table.deleteRow(table.rows.length-1);
-            }
+       {
+    var table=document.getElementById("dynamic-table").getElementsByTagName('tbody')[0];
+    if (table.rows.length>1){
+        table.deleteRow(table.rows.length-2);
         }
+       }
     </script>
 </body>
 </html>
