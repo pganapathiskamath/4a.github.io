@@ -6,25 +6,23 @@
     <title>Dynamic Table</title>
 </head>
 <style>
-table{
+table {
     border-collapse: collapse;
     width: 50%;
     margin-bottom: 10px;
 }
-th,td{
-border: 1px solid black;
-padding: 8px;
-text-align: center;
+th, td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: center;
 }
-th{
-
+th {
     background-color: #f2f2f2;
 }
-tr:hover{
-
+tr:hover {
     background-color: #f5f5f5;
 }
-button{
+button {
     padding: 5px 10px;
     background-color: hsl(212, 68%, 11%);
     color: #fff;
@@ -37,45 +35,46 @@ button{
     <button onclick="addrow()">Add Row</button>
     <button onclick="removerow()">Remove Row</button>
     <table id="dynamic-table">
-  <thead>
-    <tr>
-        <th>Name</th>
-        <th>Age</th>
-<th>Action</th>
-    </tr>
-  </thead>
-<tbody>
-    <tr>
-        <td><input type="text" name="name[]"></td>
-        <td><input type="number" name="age[]"></td>
-        <td><button onclick="deleteRow(this)">Delete</button></td>
-    </tr>
-</tbody>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><input type="text" name="name[]"></td>
+                <td><input type="number" name="age[]"></td>
+                <td><button onclick="deleteRow(this)">Delete</button></td>
+            </tr>
+        </tbody>
     </table>
     <script>
         function addrow()
         {
-            var table=document.getElementById("dynamic-table").getElementsByTagName('tbody')[0];
-            var newRow=table.InsertRow(table.rows.length);
-            var nameCell=newRow.InsertCell(0);
-            var ageCell=newRow.InsertCell(1);
-            var actionCell=newRow.InsertCell(2);
-            nameCell.innerHTML= '<input type="text" name="name[]"/>';
-            ageCell.innerHTML= '<input type="number" name="age[]"/>';
-            actionCell.innerHTML= '<button onclick="deleteRow(this)">Delete</button>';
+            var table = document.getElementById("dynamic-table").getElementsByTagName('tbody')[0];
+            var newRow = table.insertRow(table.rows.length);
+            var nameCell = newRow.insertCell(0);
+            var ageCell = newRow.insertCell(1);
+            var actionCell = newRow.insertCell(2);
+            nameCell.innerHTML = '<input type="text" name="name[]"/>';
+            ageCell.innerHTML = '<input type="number" name="age[]"/>';
+            actionCell.innerHTML = '<button onclick="deleteRow(this)">Delete</button>';
         }
         function deleteRow(button)
         {
-            var row=button.parentNode.parentNode;
+            var row = button.parentNode.parentNode;
             row.parentNode.removeChild(row);
         }
         function removerow()
-       {
-    var table=document.getElementById("dynamic-table").getElementsByTagName('tbody')[0];
-    if (table.rows.length>1){
-        table.deleteRow(table.rows.length-2);
+        {
+            var table = document.getElementById("dynamic-table").getElementsByTagName('tbody')[0];
+            if (table.rows.length > 1) {
+                table.deleteRow(table.rows.length - 1);
+            }
         }
-       }
     </script>
 </body>
 </html>
+
